@@ -1,7 +1,7 @@
 package duck.manager;
 
 public class Passenger {
-    public Passenger(String address, String lastName, String phoneNumber, int yearOfBirth, String gender, String ID) {
+    public Passenger(String firstName, String lastName, String phoneNumber, int yearOfBirth, String gender, String ID,String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.yearOfBirth = yearOfBirth;

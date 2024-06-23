@@ -30,5 +30,4 @@ public class Reservation implements Serializable {
     public ArrayList<Flight> getFlightList(){
         return flights;
     }
-
 }

@@ -21,13 +21,13 @@ public class ContactPane extends BlurChild {
         JLabel lblWebsite = new JLabel("Website:");
         JLabel lblSocialMedia = new JLabel("Social Media:");
 
-        JLabel phoneNumber = new JLabel("+1-234-567-8901");
-        JLabel website = new JLabel("<html><a href=''>www.example.com</a></html>");
+        JLabel phoneNumber = new JLabel("0974 357 317");
+        JLabel website = new JLabel("<html><a href=''>www.vietjetair.com</a></html>");
         website.setCursor(new Cursor(Cursor.HAND_CURSOR));
         website.setForeground(Color.BLUE);
         website.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                openWebpage("http://www.example.com");
+                openWebpage("https://www.vietjetair.com");
             }
         });
 
@@ -42,16 +42,8 @@ public class ContactPane extends BlurChild {
                 openWebpage("http://www.facebook.com");
             }
         });
-        JLabel twitterLink = new JLabel("<html><a href=''>Twitter</a></html>");
-        twitterLink.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        twitterLink.setForeground(Color.BLUE);
-        twitterLink.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                openWebpage("http://www.twitter.com");
-            }
-        });
+
         socialMediaPanel.add(facebookLink);
-        socialMediaPanel.add(twitterLink);
         add(lblPhoneNumber);
         add(phoneNumber);
         add(lblWebsite);

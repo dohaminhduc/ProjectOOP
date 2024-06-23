@@ -25,13 +25,13 @@ public class Login extends JPanel {
         JLabel usernameLabel = new JLabel("Username:");
         FontIcon userIcon = FontIcon.of(Dashicons.ADMIN_USERS);
         userIcon.setIconSize(16);
-        userIcon.setIconColor(Color.white);
+        userIcon.setIconColor(Color.black);
         usernameLabel.setIcon(userIcon);
 
         JLabel passwordLabel = new JLabel("Password:");
         FontIcon passwordIcon = FontIcon.of(Dashicons.LOCK);
         passwordIcon.setIconSize(16);
-        passwordIcon.setIconColor(Color.white);
+        passwordIcon.setIconColor(Color.black);
         passwordLabel.setIcon(passwordIcon);
 
         JPanel panel1 = new JPanel(new MigLayout("wrap,fillx,insets 35 45 30 45", "fill,250:280"));
@@ -41,7 +41,7 @@ public class Login extends JPanel {
                 "[dark]background:lighten(@background,3%);");
         txtPassword.putClientProperty(FlatClientProperties.STYLE,"" +
                 "showRevealButton:true");
-        JLabel lbTitle = new JLabel("Welcome back!");
+        JLabel lbTitle = new JLabel("Have A Good Day!");
         lbTitle.putClientProperty(FlatClientProperties.STYLE,"" +
                 "font:bold +10");
         JLabel description = new JLabel("Please sign in to access your account.");
@@ -62,8 +62,8 @@ public class Login extends JPanel {
             String username = txtUsername.getText();
             String password = String.valueOf(txtPassword.getPassword());
 
-            if (Serializer.fileExists("src/main/java/duck/database/users", STR."\{username}.dat")){
-                User user = (User) Serializer.deserializeObject("src/main/java/duck/database/users", STR."\{username}.dat");
+            if (Serializer.fileExists("C:\\Users\\Duc\\Documents\\GitHub\\ProjectOOP\\ProjectOOP\\src\\main\\java\\duck\\database\\users", username+".dat")){
+                User user = (User) Serializer.deserializeObject("C:\\Users\\Duc\\Documents\\GitHub\\ProjectOOP\\ProjectOOP\\src\\main\\java\\duck\\database\\users", username+".dat");
                 if(password.equals(user.getPassword())) {
                     currentUser = user.getUsername();
                     JOptionPane.showMessageDialog(Login.this, "You have successfully logged in!");

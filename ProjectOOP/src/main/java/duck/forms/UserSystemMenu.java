@@ -21,7 +21,6 @@ import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class UserSystemMenu extends BlurChild  {
     public UserSystemMenu() {
         super(new Style()
@@ -29,7 +28,8 @@ public class UserSystemMenu extends BlurChild  {
                 .setBorder(new StyleBorder(10)
                         .setOpacity(0.15f)
                         .setBorderWidth(1.2f)
-                        .setBorderColor(new GradientColor(new Color(200,200,200), new Color(150,150,150), new Point2D.Float(0,0), new Point2D.Float(1f,0)))
+                        .setBorderColor(new GradientColor(new Color(0, 0, 0), new Color(0, 0, 0, 255),
+                                new Point2D.Float(0,0), new Point2D.Float(1f,0)))
                 )
                 .setOverlay(new StyleOverlay(new Color(0,0,0, 255),0.2f))
         );
@@ -48,19 +48,33 @@ public class UserSystemMenu extends BlurChild  {
     private SimpleMenuOption getMenuOption(){
         raven.drawer.component.menu.data.MenuItem items[] = new raven.drawer.component.menu.data.MenuItem[]{
                 new Item.Label("Booking"),
-                new Item("Flight Searching", "domestic.svg"),
+                new Item("Flight Searching", "dashicons-tickets-alt"),
                 new Item.Label("Preview"),
-                new Item("Destination","destination.svg"),
+                new Item("Airports","dashicons-admin-site-alt2"),
                 new Item.Label("Others"),
-                new Item("Contact","contact.svg")
+                new Item("Contact","dashicons-phone")
         };
-        return new SimpleMenuOption().
-                setBaseIconPath("duck/menu")
+        SimpleMenuOption menuOption = new SimpleMenuOption() {
+            @Override
+            public Icon buildMenuIcon(String path, float scale) {
+                FontIcon icon = new FontIcon();
+                icon.setIconColor(new Color(208, 208, 208));
+                icon.setIconSize(50);
+                icon.setIkon(Dashicons.findByDescription(path));
+                return icon;
+            }
+        };
+        return menuOption
                 .setMenus(items)
                 .setMenuStyle(new SimpleMenuStyle() {
                     @Override
                     public void styleMenuPanel(JPanel panel, int[] index) {
                         panel.setOpaque(false);
+                    }
+
+                    @Override
+                    public void styleMenuItem(JButton menu, int[] index) {
+                        menu.setContentAreaFilled(false);
                     }
                 })
                 .addMenuEvent(new MenuEvent() {

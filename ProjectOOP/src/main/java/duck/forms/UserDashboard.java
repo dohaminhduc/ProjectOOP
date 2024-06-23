@@ -11,7 +11,7 @@ import java.awt.*;
 public class UserDashboard extends BlurBackground implements IndexChangeListener {
     public UserDashboard() {
         ImageIcon icon = new ImageIcon(getClass().getResource("/duck/images/background.jpg"));
-        setOverlay(new StyleOverlay(new Color(20,20,20, 195),0.5f));
+        setOverlay(new StyleOverlay(new Color(20,20,20, 255),0.2f));
         setImage(icon.getImage());
         init();
     }
@@ -31,7 +31,6 @@ public class UserDashboard extends BlurBackground implements IndexChangeListener
         userSystemMenu.addIndexChangeListener(this);
         setOpaque(false);
     }
-
     private void switchPane(int index){
         CardLayout cl = (CardLayout)cards.getLayout();
         if(index == 0){

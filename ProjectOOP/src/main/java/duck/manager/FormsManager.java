@@ -2,6 +2,8 @@ package duck.manager;
 
 import com.formdev.flatlaf.extras.FlatAnimatedLafChange;
 import duck.main.Application;
+import org.kordamp.ikonli.Ikon;
+import org.kordamp.ikonli.swing.FontIcon;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,5 +31,11 @@ public class FormsManager {
             application.repaint();
             FlatAnimatedLafChange.hideSnapshotWithAnimation();
         });
+    }
+    public static FontIcon initIcon(Ikon ikonURL, int size, Color color){
+        FontIcon icon = FontIcon.of(ikonURL, size, color);
+        icon.setIconSize(size);
+        icon.setIconColor(color);
+        return icon;
     }
 }

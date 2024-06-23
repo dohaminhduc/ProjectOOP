@@ -37,7 +37,7 @@ public class Register extends JPanel {
                 "[light]background:darken(@background,3%);" +
                 "[dark]background:lighten(@background,3%);");
 
-        JLabel regLabel = new JLabel("Aerosafe Flight Reservation Registration ");
+        JLabel regLabel = new JLabel("Flight Reservation Registration ");
         regLabel.putClientProperty(FlatClientProperties.STYLE,"" +
                 "font:bold +10");
         JLabel description = new JLabel("Fly High - Fly Safe - Fly Happily");
@@ -67,7 +67,7 @@ public class Register extends JPanel {
                     return;
                 } else{
                     User user = new User(username, password, gender);
-                    Serializer.serializeObject(user, "src/main/java/duck/database/users", username+".dat");
+                    Serializer.serializeObject(user, "C:\\Users\\Duc\\Documents\\GitHub\\ProjectOOP\\ProjectOOP\\src\\main\\java\\duck\\database\\users", username+".dat");
                     JOptionPane.showMessageDialog(this, "User has been registered successfully");
                 }
         });

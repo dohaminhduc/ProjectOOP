@@ -31,9 +31,9 @@
         <dependency>
             <groupId>raven.popup</groupId>
             <artifactId>swing-glasspane-popup</artifactId>
-            <version>1.5.0</version>
+            <version>1.5.1</version>
             <scope>system</scope>
-            <systemPath>${basedir}/src/main/resources/duck/libraries/swing-glasspane-popup-1.5.0.jar</systemPath>
+            <systemPath>${basedir}/src/main/resources/duck/libraries/swing-glasspane-popup-1.5.1.jar</systemPath>
         </dependency>
 
         <dependency>
@@ -92,6 +92,11 @@
         <dependency>
             <groupId>org.kordamp.ikonli</groupId>
             <artifactId>ikonli-entypo-pack</artifactId>
+            <version>12.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kordamp.ikonli</groupId>
+            <artifactId>ikonli-fluentui-pack</artifactId>
             <version>12.3.1</version>
         </dependency>
     </dependencies>

@@ -2,6 +2,7 @@ package duck.main;
 
 import com.formdev.flatlaf.fonts.roboto.FlatRobotoFont;
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import duck.login.Login;
 import duck.manager.FormsManager;
 
@@ -15,7 +16,7 @@ public class Application extends JFrame {
     private void init(){
         setTitle("Flight Reservation");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(new Dimension(1250,800));
+        setSize(new Dimension(1280,800));
         setLocationRelativeTo(null);
         setResizable(false);
         setContentPane(new Login());
@@ -23,9 +24,9 @@ public class Application extends JFrame {
     }
     public static void main(String[] args) {
         FlatRobotoFont.install();
-        FlatMacDarkLaf.registerCustomDefaultsSource("src/main/resources/duck/themes");
+        FlatMacLightLaf.registerCustomDefaultsSource("src/main/resources/duck/themes");
         UIManager.put("defaultFont", new Font(FlatRobotoFont.FAMILY,Font.PLAIN,13));
-        FlatMacDarkLaf.setup();
+        FlatMacLightLaf.setup();
         EventQueue.invokeLater(() -> {
             new Application().setVisible(true);
         });
