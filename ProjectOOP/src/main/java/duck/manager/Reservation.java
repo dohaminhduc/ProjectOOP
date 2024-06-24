@@ -18,7 +18,7 @@ public class Reservation implements Serializable {
         flights = (ArrayList<Flight>) Serializer.deserializeFlights("C:\\ProjectOOP\\database\\flights");
 
     }
-    public ArrayList<Flight> getCars() {
+    public ArrayList<Flight> getFlights() {
         return flights;
     }
     public void addFlight(Flight flight) {
